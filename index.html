@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mods para Minecraft Bedrock y Java</title>
+<meta name="description" content="Descarga mods y add-ons de terror para Minecraft Bedrock y Java.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<style>
+:root{
+  --dirt:#4a3321; --dirt2:#55392a;
+  --panel:#c6c6c6; --slot:#8b8b8b; --ink:#2b2b2b;
+  --btn:#4d9a3a; --btn-hi:#8fd16b; --btn-lo:#2c5a1f;
+  --warn:#7a1f1f;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:12px}
+body{
+  margin:0; min-height:100vh; color:var(--ink);
+  font-family:'VT323','Courier New',monospace; font-size:21px; line-height:1.3;
+  background-color:var(--dirt);
+  background-image:conic-gradient(var(--dirt2) 25%,var(--dirt) 0 50%,var(--dirt2) 0 75%,var(--dirt) 0);
+  background-size:48px 48px;
+}
+h1,h2,h3{font-family:'Press Start 2P','Courier New',monospace;font-weight:400;margin:0}
+.wrap{max-width:760px;margin:0 auto;padding:20px 14px 40px}
+.panel{
+  background:var(--panel); border:4px solid #000;
+  box-shadow:inset 4px 4px 0 #fff, inset -4px -4px 0 #555;
+  padding:18px;
+}
+header.panel{margin-bottom:18px}
+h1{font-size:clamp(18px,5vw,28px);line-height:1.5;letter-spacing:.02em}
+header p{margin:10px 0 0;max-width:34em}
+.tabs{display:flex;gap:10px;margin:0 0 18px}
+.tab{
+  flex:1; font:inherit; font-family:'Press Start 2P','Courier New',monospace; font-size:13px;
+  padding:14px 8px; cursor:pointer; color:var(--ink);
+  background:var(--slot); border:4px solid #000;
+  box-shadow:inset 4px 4px 0 #fff, inset -4px -4px 0 #555;
+}
+.tab[aria-pressed="true"]{background:var(--btn); color:#fff; box-shadow:inset 4px 4px 0 var(--btn-hi), inset -4px -4px 0 var(--btn-lo); text-shadow:2px 2px 0 #1d3d14}
+.tab:focus-visible,.dl:focus-visible,summary:focus-visible{outline:4px solid #ffd84a;outline-offset:2px}
+.mod{display:grid;grid-template-columns:76px 1fr;gap:16px;margin-bottom:18px}
+.icon{
+  width:76px;height:76px;background:var(--slot);border:4px solid #000;
+  box-shadow:inset 4px 4px 0 #373737, inset -4px -4px 0 #fff;
+  display:grid;place-items:center;
+}
+.egg{width:40px;height:50px;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;position:relative;border:3px solid #000}
+.egg::before,.egg::after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:var(--spot)}
+.egg::before{left:6px;top:12px}.egg::after{right:8px;top:24px;width:7px;height:7px}
+.mod h2{font-size:15px;line-height:1.5;margin-bottom:6px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.tag{background:var(--slot);border:3px solid #000;padding:0 8px;font-size:18px}
+.mod p{margin:0 0 10px}
+.dl{
+  display:inline-block;text-decoration:none;color:#fff;
+  font-family:'Press Start 2P','Courier New',monospace;font-size:13px;
+  padding:14px 18px;background:var(--btn);border:4px solid #000;
+  box-shadow:inset 4px 4px 0 var(--btn-hi), inset -4px -4px 0 var(--btn-lo);
+  text-shadow:2px 2px 0 #1d3d14;
+}
+.dl:hover{background:#58aa44}
+.dl:active{box-shadow:inset 4px 4px 0 var(--btn-lo), inset -4px -4px 0 var(--btn-hi);transform:translateY(2px)}
+details{margin-top:12px}
+summary{cursor:pointer;font-size:20px}
+details ol{margin:8px 0 0;padding-left:24px}
+details code{background:var(--slot);padding:0 6px;border:2px solid #000;font-family:inherit}
+.empty{text-align:left}
+.empty h2{font-size:14px;line-height:1.6;margin-bottom:8px}
+[hidden]{display:none!important}
+footer{color:#e8dccb;font-size:18px;margin-top:6px;padding:0 4px}
+@media (max-width:420px){.mod{grid-template-columns:1fr}.icon{width:68px;height:68px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="panel">
+    <h1>Mods para Minecraft</h1>
+    <p>Descarga add-ons para Bedrock y mods para Java. Elige tu edición y toca Descargar.</p>
+  </header>
+
+  <div class="tabs" role="group" aria-label="Edición de Minecraft">
+    <button class="tab" id="tab-bedrock" aria-pressed="true" type="button">Bedrock</button>
+    <button class="tab" id="tab-java" aria-pressed="false" type="button">Java</button>
+  </div>
+
+  <main>
+    <section id="bedrock" aria-labelledby="tab-bedrock">
+      <article class="panel mod">
+        <div class="icon" aria-hidden="true"><div class="egg" style="background:#0b0b0d;--spot:#d8d8d8"></div></div>
+        <div>
+          <h2>Bosque Maldito</h2>
+          <div class="tags"><span class="tag">Terror</span><span class="tag">Bedrock</span><span class="tag">.mcaddon</span></div>
+          <p>Cabañas abandonadas con cofre de botín, árboles muertos, tótems de ramas y niebla oscura en los bosques. El Observador te mira desde lejos y, cuando menos lo esperas, te ataca: cada golpe te quita 5 corazones y luego huye para volver a observarte.</p>
+          <a class="dl" href="Terror_Bosque_Maldito.mcaddon" download>Descargar</a>
+          <details>
+            <summary>Cómo instalarlo</summary>
+            <ol>
+              <li>Abre el archivo descargado con Minecraft.</li>
+              <li>Crea o edita un mundo y activa los dos packs (de comportamiento y de recursos).</li>
+              <li>Prueba con <code>/summon terror:observador</code> o <code>/structure load terror:cabin ~ ~ ~</code></li>
+            </ol>
+          </details>
+        </div>
+      </article>
+
+      <article class="panel mod">
+        <div class="icon" aria-hidden="true"><div class="egg" style="background:#e87814;--spot:#141428"></div></div>
+        <div>
+          <h2>Terror Shinobi</h2>
+          <div class="tags"><span class="tag">Terror</span><span class="tag">Bedrock</span><span class="tag">.mcaddon</span></div>
+          <p>Cinco shinobis corrompidos aparecen de noche en la oscuridad: Naruto, Hinata, Sasuke y Sakura, cada uno con su efecto. Kurama es el jefe gigante, con barra de jefe y cielo oscuro. Mod de fans, no oficial.</p>
+          <a class="dl" href="Terror_Shinobi.mcaddon" download>Descargar</a>
+          <details>
+            <summary>Cómo instalarlo</summary>
+            <ol>
+              <li>Abre el archivo descargado con Minecraft.</li>
+              <li>Crea o edita un mundo y activa los dos packs.</li>
+              <li>Busca los huevos de aparición en el inventario creativo o usa <code>/summon terror:kurama_demonio</code></li>
+            </ol>
+          </details>
+        </div>
+      </article>
+    </section>
+
+    <section id="java" aria-labelledby="tab-java" hidden>
+      <div class="panel empty">
+        <h2>Aún no hay mods para Java</h2>
+        <p>Los mods de Java se agregarán aquí pronto. Mientras tanto, los add-ons de Bedrock están en la otra pestaña.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>Proyecto de fans. No está afiliado a Mojang ni a Microsoft. Minecraft es una marca de Mojang Studios.</footer>
+</div>
+<script>
+(function(){
+  var tabs={bedrock:document.getElementById('tab-bedrock'),java:document.getElementById('tab-java')};
+  var secs={bedrock:document.getElementById('bedrock'),java:document.getElementById('java')};
+  function show(k){
+    for(var n in tabs){
+      tabs[n].setAttribute('aria-pressed',n===k?'true':'false');
+      secs[n].hidden=(n!==k);
+    }
+  }
+  tabs.bedrock.addEventListener('click',function(){show('bedrock')});
+  tabs.java.addEventListener('click',function(){show('java')});
+})();
+</script>
+</body>
+</html>
